@@ -1,5 +1,8 @@
 class BattlesController < ApplicationController
 
+  protect_from_forgery :secret => 'iLikeH0tD0gs',  
+                       :except => :create
+
   def index
     @battles = Battle.all
   end
