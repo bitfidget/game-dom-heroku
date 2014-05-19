@@ -18,11 +18,11 @@ class BattlesController < ApplicationController
     battle.score = params[:score]
     # create new winner div
     battle.winner = Div.new
-    battle.winner.content = params[:winner][:content]
+    battle.winner.content = 'I beat a ' + battle.loser.element
     battle.winner.element = params[:winner][:element]
     # create new loser div
     battle.loser = Div.new
-    battle.loser.content = params[:loser][:content]
+    battle.loser.content = 'I lost to a ' + battle.winner.element
     battle.loser.element = params[:loser][:element]
     # create new page, if page not exist
     page_match = Page.where("url" => params[:page][:url])
@@ -50,7 +50,7 @@ class BattlesController < ApplicationController
     battle.save
 
     if battle.save
-      render :json => battle.to_json
+      render :json => true
     else
       render :json => false
     end
