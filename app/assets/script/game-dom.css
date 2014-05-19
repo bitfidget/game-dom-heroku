@@ -51,6 +51,72 @@ img.domCloned{
 .domCloned a{
   color: #444 !important;
 }
+
+
+/*
+==============================================
+fly-off-right
+==============================================
+*/
+
+.fly-off-right{
+  animation-name: slideRight;
+  -webkit-animation-name: slideRight; 
+
+  animation-duration: 1s; 
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease-in-out; 
+  -webkit-animation-timing-function: ease-in-out;   
+
+  visibility: visible !important; 
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0%);
+  }
+  50%{
+    transform: translateX(108%);
+  }
+  65%{
+    transform: translateX(96%);
+  }
+  80%{
+    transform: translateX(104%);
+  }
+  95%{
+    transform: translateX(98%);
+  }     
+  100% {
+    transform: translateX(100%);
+  } 
+}
+
+@-webkit-keyframes slideRight {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+  50%{
+    -webkit-transform: translateX(108%);
+  }
+  65%{
+    -webkit-transform: translateX(104%);
+  }
+  80%{
+    -webkit-transform: translateX(96%);
+  }
+  95%{
+    -webkit-transform: translateX(102%);
+  }     
+  100% {
+    -webkit-transform: translateX(100%);
+  }
+}
+
+
+
+/* the 'crowd'  */
 #domCrowd{
   position: absolute;
   display: block;

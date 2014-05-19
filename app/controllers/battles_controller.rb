@@ -22,13 +22,13 @@ class BattlesController < ApplicationController
     battle = Battle.new
     battle.score = params[:score]
     # create new winner div
-    battle.winner = Div.new
-    battle.winner.content = 'I beat a ' + battle.loser.element
+    battle.winner = Div.new 
     battle.winner.element = params[:winner][:element]
     # create new loser div
     battle.loser = Div.new
-    battle.loser.content = 'I lost to a ' + battle.winner.element
     battle.loser.element = params[:loser][:element]
+    battle.winner.content = 'I beat a ' + battle.loser.element
+    battle.loser.content = 'I lost to a ' + battle.winner.element
     # create new page, if page not exist
     page_match = Page.where("url" => params[:page][:url])
     if page_match.present?
