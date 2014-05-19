@@ -1,8 +1,8 @@
 //------------------------------------------------------------------------//
 // variables that will be required all over the place
 //------------------------------------------------------------------------//
-var projectHost = 'http://dom1nation.herokuapp.com';
-var messagePath = '/ajax-messages/';
+var projectHost = 'http://modelcitizen.com.au/game-of-dom/';
+var messagePath = 'ajax-messages/';
 var winWidth, winHeight, winAlertLeft, winBody, currentMsg, reload;
 var $GDMessageContainer = 0;
 var sanityTest = '<div id="sanityTest"/>';
@@ -177,7 +177,7 @@ var domGame = {
     winAlertLeft = ((winWidth - 300) / 2);
     winBody = $('body');
     winBody.append(sanityTest);
-    $('head').append('<link rel="stylesheet" type="text/css" href="' + projectHost + '/script/game-dom.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="' + projectHost + 'css/game-of-dom.css">');
     this.loadCheck();
     //------------------------------------------------------
     // game ready to roll --> next step is domGame.loadCheck
@@ -392,18 +392,6 @@ var domGame = {
     // make the dead bits fly away 
     //-----------------------------------------------------
     winBody.append(deadBits)
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
     console.log(deadBits)
   },
 
@@ -436,7 +424,9 @@ var domGame = {
     // compile all info as nice hashes. 
     // create the data object and send via ajax
     //-----------------------------------------------------
+    
     // thisIcon = $('link[rel="shortcut icon"]')[0].href;
+
     var thisPage = {
       url : window.location.href,
       title : window.location.hostname
@@ -449,9 +439,9 @@ var domGame = {
       //content : loser.shadow.get(0),
       element : loser.gameName
     }
-    // make the ajax request
+
     $.ajax({
-      url : projectHost + '/battles',
+      url : '/battles',
       type : 'POST',
       dataType : 'json',
       data : {
@@ -465,26 +455,18 @@ var domGame = {
     .done(function(){
       console.log('AJAX SUCCESS');
       // --> show a button on screen to link to the new score on the leaderboard
-      // --> show a PLAY AGAIN button which resets all
-      //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
+      // --> show a PLAY AGIN button which resets all
     })
     // AJAX FAIL
     .fail(function(){
-      console.log('AJAX FAIL');
+      console.log('fart - AJAX FAIL');
       debugger
     });
+
+
+
   }
+
 };
 
 
@@ -509,9 +491,8 @@ var popUp = {
   messageFetch : function (currentMsg) {
     //-----------------------------------------------------
     // fetch json message to display in the popup
-    // message url is made up of 3 variables - the host and path (set at top) and the message
     //-----------------------------------------------------
-    var url = (projectHost + messagePath + currentMsg);
+    var url = (projectHost + messagePath + currentMsg + '/json.txt');
     $.ajax({
       type: 'GET',
       dataType: 'json',
