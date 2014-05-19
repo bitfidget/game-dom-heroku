@@ -177,7 +177,7 @@ var domGame = {
     winAlertLeft = ((winWidth - 300) / 2);
     winBody = $('body');
     winBody.append(sanityTest);
-    $('head').append('<link rel="stylesheet" type="text/css" href="' + projectHost + '/script/game-dom.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="' + projectHost + '/assets/game-dom.css">');
     this.loadCheck();
     //------------------------------------------------------
     // game ready to roll --> next step is domGame.loadCheck
