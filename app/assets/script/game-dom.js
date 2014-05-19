@@ -330,9 +330,9 @@ var domGame = {
       popCrowd.crowdCheer(600)
       // the actual move
       setTimeout(function () {
-        assess()
+        domGame.restage();
       }, 600);
-      domGame.restage();
+      assess();
     };
     // assess the winner and loser
     var assess = function () {
@@ -352,15 +352,22 @@ var domGame = {
         winner = fighters[2];
         loser = fighters[1]
       }
-      // adjust fighters
-      winner.battleScore += loser.thisHit;
+      // adjust fighters scores and health
       loser.battleHealth -= winner.thisHit;
+      winner.battleScore += loser.thisHit;
+      if (loser.battleHealth <= 0) {
+        winner.battleScore += 100;
+        loser.battleScore -= loser.battlePower;
+      };
+      popUp.updateScore();
+      // check for dead element and adjust loser as needed - get new battleElement
       if (loser.battleHealth <= 0) {
         if ( (loser.battleElement.get(0).id == 'TEOne' ) || (loser.battleElement.get(0).id == 'TETwo' ) ) {
           // fight over
           domGame.restage()
           domGame.end(winner, loser);
           domGame.save(winner, loser);
+          winner.battleScore += 100;
           return
         };
         var deadBits = loser.battleElement.clone()
@@ -369,12 +376,9 @@ var domGame = {
         loser.battleElement = loser.findBattleElement();
         loser.battlePower = loser.battleElement.setPower();
         loser.battleHealth = 100;
-        winner.battleScore += 100;
-        loser.battleScore -= loser.battlePower;
         // if no next element, DIE
       };
       // update scores and info
-      popUp.updateScore()
       domGame.turn();
     }
     // do it again
