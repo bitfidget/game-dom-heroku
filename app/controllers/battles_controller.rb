@@ -1,5 +1,7 @@
 class BattlesController < ApplicationController
 
+  after_action :set_access_control_headers, only: [:create]
+
   protect_from_forgery :secret => 'iLikeH0tD0gs',  
                        :except => :create
 
