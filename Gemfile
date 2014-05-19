@@ -49,3 +49,6 @@ end
 
 # general extra gems
 gem 'protected_attributes'
+
+# heroku good/badness
+gem 'rails_12factor'
