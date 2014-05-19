@@ -307,8 +307,8 @@ var domGame = {
       popUp.messageCount(3);
       $nameOne = $('#nameOne');
       $nameTwo = $('#nameTwo');
-      $nameOne.html(fighters[1].gameName);
-      $nameTwo.html(fighters[2].gameName);
+      $nameOne.html('<' + fighters[1].gameName + '>');
+      $nameTwo.html('<' + fighters[2].gameName + '>');
     }, 2000);
     //-----------------------------------------------------
     // add the names to the scoreboard
@@ -386,7 +386,7 @@ var domGame = {
     // do it again
     setTimeout(function () {
       advance()
-    }, 1000);
+    }, 1200);
     //-----------------------------------------------------
     // all bits that killed off --> domGame.flyOff
     // once you have a winner --> domGame.end(winner, loser)
