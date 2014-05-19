@@ -124,7 +124,7 @@ var sanityTest = '<div id="sanityTest"/>';
 
     var findLast = function () {
       if ( current.children().length > 0 ) {
-        if ( current.children().last().is('br, p, span, td, ul, ol, li, tr, table, a, img, video, div, section, article, footer, header') ) {
+        if ( current.children().last().is('br, p, span, td, ul, ol, li, tr, table, a, img, video, div, section, article, footer, header, tbody, h1, h2, h3, h4, h5, h6, th') ) {
           current = current.children().last();
           console.log('if of type x, check again: '  + current)
           findLast();
@@ -147,8 +147,10 @@ var sanityTest = '<div id="sanityTest"/>';
   $.fn.setPower = function () {
     if (this.is('br, p, span, td') ) {
         return 20
-      } else if (this.is('ul, ol, li, tr, table') ) {
+      } else if (this.is('ul, ol, li, tr, table, th') ) {
         return 25
+      } else if (this.is('tbody, h1, h2, h3, h4, h5, h6') ) {
+        return 30
       } else if (this.is('a') ) {
         return 45
       } else if (this.is('img, video') ) {
@@ -384,7 +386,7 @@ var domGame = {
     // do it again
     setTimeout(function () {
       advance()
-    }, 500);
+    }, 1000);
     //-----------------------------------------------------
     // all bits that killed off --> domGame.flyOff
     // once you have a winner --> domGame.end(winner, loser)
