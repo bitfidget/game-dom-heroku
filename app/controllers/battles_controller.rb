@@ -53,7 +53,7 @@ class BattlesController < ApplicationController
     battle.save
 
     if battle.save
-      render :json => true
+      render :json => { head :ok }
     else
       render :json => false
     end
