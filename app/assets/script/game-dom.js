@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------//
 // variables that will be required all over the place
 //------------------------------------------------------------------------//
-var projectHost = 'http://modelcitizen.com.au/game-of-dom/';
+var projectHost = 'http://dom1nation.herokuapp.com/';
 var messagePath = 'ajax-messages/';
 var winWidth, winHeight, winAlertLeft, winBody, currentMsg, reload;
 var $GDMessageContainer = 0;
@@ -177,7 +177,7 @@ var domGame = {
     winAlertLeft = ((winWidth - 300) / 2);
     winBody = $('body');
     winBody.append(sanityTest);
-    $('head').append('<link rel="stylesheet" type="text/css" href="' + projectHost + 'css/game-of-dom.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="' + projectHost + 'script/game-dom.css">');
     this.loadCheck();
     //------------------------------------------------------
     // game ready to roll --> next step is domGame.loadCheck
@@ -491,8 +491,9 @@ var popUp = {
   messageFetch : function (currentMsg) {
     //-----------------------------------------------------
     // fetch json message to display in the popup
+    // message url is made up of 3 variables - the host and path (set at top) and the message
     //-----------------------------------------------------
-    var url = (projectHost + messagePath + currentMsg + '/json.txt');
+    var url = (projectHost + messagePath + currentMsg);
     $.ajax({
       type: 'GET',
       dataType: 'json',
