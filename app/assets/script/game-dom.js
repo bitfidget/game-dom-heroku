@@ -307,8 +307,8 @@ var domGame = {
       popUp.messageCount(3);
       $nameOne = $('#nameOne');
       $nameTwo = $('#nameTwo');
-      $nameOne.html('<' + fighters[1].gameName + '>');
-      $nameTwo.html('<' + fighters[2].gameName + '>');
+      $nameOne.html('&lt;' + fighters[1].gameName + '&gt;');
+      $nameTwo.html('&lt;' + fighters[2].gameName + '&gt;');
     }, 2000);
     //-----------------------------------------------------
     // add the names to the scoreboard
@@ -429,6 +429,8 @@ var domGame = {
     // make the winner look happy!
     //-----------------------------------------------------
     loser.battleElement.append('<h1>DEAD</h1>');
+    currentMsg = 'finish';
+    popUp.messageFetch(currentMsg);
     $('.hatch').removeClass('hatch');
     $('.tossing').removeClass('tossing');
     setInterval(function () {
