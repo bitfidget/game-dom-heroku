@@ -161,7 +161,6 @@ var sanityTest = '<div id="sanityTest"/>';
         return 40
       }
   };
-
 } ( jQuery ) );
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -328,7 +327,6 @@ var domGame = {
     var winner, loser;
     // make fighters advance on each other every .5 sec
     var advance = function () {
-      $('.hatch').removeClass('hatch');
       popCrowd.crowdCheer(600)
       // the actual move
       setTimeout(function () {
@@ -386,7 +384,7 @@ var domGame = {
     // do it again
     setTimeout(function () {
       advance()
-    }, 1200);
+    }, 1500);
     //-----------------------------------------------------
     // all bits that killed off --> domGame.flyOff
     // once you have a winner --> domGame.end(winner, loser)
@@ -398,16 +396,21 @@ var domGame = {
     // make the dead bits fly away 
     //-----------------------------------------------------
   
-    // re do this as fn as I'll need it later
-
-    winBody.append('<div class="fly-off">' + deadBits.get(0) + '</div>');
-    $('.fly-off').css({
+    // re do this as fn as I'll need it later for other things
+    winBody.append('<div class="fly-off">' + deadBits[0] + '</div>');
+    $flyOff = $('.fly-off');
+    $flyOff.css({
       'left' : ( (winWidth / 2) + 'px'),
       'top' : ( (winHeight / 2) + 'px')
-    }); 
-    $('.fly-off').addClass('fly-off-right') 
+    });
+    var thisStyles = ['fly-off-right', 'fly-off-left'];
+    var thisStyle = [ (Math.floor(Math.random() * thisStyles.length) ) ]
+    $flyOff.addClass(thisStyle);
+    setTimeout(function () {
+      $flyOff.remove();
+    }, 1100)
 
-    console.log(deadBits);
+    console.log(thisStyle);
   },
 
   restage : function () {

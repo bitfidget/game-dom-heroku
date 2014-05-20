@@ -69,22 +69,45 @@ fly-off-right
   visibility: visible !important; 
   position: absolute;
 }
+
+/*
+==============================================
+fly-off-right
+==============================================
+*/
+
+.fly-off{
+  display: block;
+  min-width: 100px;
+  min-height: 100px;
+}
+
+.fly-off-right{
+  animation-name: flyRight;
+  -webkit-animation-name: flyRight; 
+  animation-duration: 1.3s; 
+  -webkit-animation-duration: 1.3s;
+  animation-timing-function: ease-in; 
+  -webkit-animation-timing-function: ease-in;   
+  visibility: visible; 
+  position: absolute;
+  z-index: 10000000;
+}
 @keyframes flyRight {
   0% { 
     transform: translateX(0%) translateY(0%) rotate(0deg);
   }
   20%{ 
-    transform: translateX(20%) translateY(19%) rotate(60deg);
+    transform: translateX(300%) translateY(300%) rotate(60deg);
   }
   40%{ 
-    transform: translateX(40%) translateY(30%) rotate(120deg);
+    transform: translateX(600%) translateY(110%) rotate(120deg);
   }
   60%{
-    transform: translateX(60%) translateY(22%) rotate(180deg);
+    transform: translateX(900%) translateY(-400%) rotate(180deg);
   }
   100%{
-    transform: translateX(100%) translateY(-40%) rotate(300deg);
-    opacity: 0;
+    transform: translateX(1200%) translateY(-1200%) rotate(300deg);
   }
 }
 
@@ -93,17 +116,16 @@ fly-off-right
     -webkit-transform: translateX(0%) translateY(0%) rotate(0deg);
   }
   20%{ 
-    -webkit-transform: translateX(20%) translateY(19%) rotate(60deg);
+    -webkit-transform: translateX(300%) translateY(300%) rotate(60deg);
   }
   40%{ 
-    -webkit-transform: translateX(40%) translateY(30%) rotate(120deg);
+    -webkit-transform: translateX(600%) translateY(110%) rotate(120deg);
   }
   60%{
-    -webkit-transform: translateX(60%) translateY(22%) rotate(180deg);
+    -webkit-transform: translateX(900%) translateY(-400%) rotate(180deg);
   }
   100%{
-    -webkit-transform: translateX(100%) translateY(-40%) rotate(300deg);
-    opacity: 0;
+    -webkit-transform: translateX(1200%) translateY(-1200%) rotate(300deg);
   }
 }
 
@@ -238,17 +260,13 @@ hatch
 .hatch{
   animation-name: hatch;
   -webkit-animation-name: hatch;  
-
   animation-duration: 1s; 
   -webkit-animation-duration: 1s;
-
   animation-timing-function: ease-in-out; 
   -webkit-animation-timing-function: ease-in-out;
-
   transform-origin: 50% 100%;
   -ms-transform-origin: 50% 100%;
   -webkit-transform-origin: 50% 100%; 
-
   visibility: visible !important;   
 }
 

@@ -11,9 +11,8 @@ fly-off-right
 
 .fly-off{
   display: block;
-  width: 100px;
-  height: 100px;
-  background: #F00;
+  min-width: 100px;
+  min-height: 100px;
 }
 
 .fly-off-right{
@@ -41,7 +40,7 @@ fly-off-right
     transform: translateX(900%) translateY(-400%) rotate(180deg);
   }
   100%{
-    transform: translateX(1200%) translateY(-800%) rotate(300deg);
+    transform: translateX(1200%) translateY(-1200%) rotate(300deg);
   }
 }
 
@@ -53,7 +52,7 @@ fly-off-right
     -webkit-transform: translateX(300%) translateY(300%) rotate(60deg);
   }
   40%{ 
-    -webkit-transform: translateX(600%) translateY(100%) rotate(120deg);
+    -webkit-transform: translateX(600%) translateY(110%) rotate(120deg);
   }
   60%{
     -webkit-transform: translateX(900%) translateY(-400%) rotate(180deg);
