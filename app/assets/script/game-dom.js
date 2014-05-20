@@ -175,7 +175,7 @@ var domGame = {
     //-----------------------------------------------------
     winWidth = $(window).width();
     winHeight = $(window).height();
-    winAlertLeft = ((winWidth - 300) / 2);
+    winAlertLeft = ((winWidth - 400) / 2);
     winBody = $('body');
     winBody.append(sanityTest);
     $('head').append('<link rel="stylesheet" type="text/css" href="' + projectHost + '/assets/game-dom.css">');
