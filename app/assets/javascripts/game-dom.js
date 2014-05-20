@@ -340,7 +340,7 @@ var domGame = {
         var self = fighters[i];
         // movement functions
         self.css({ 'left' : ( (winWidth/2) - self.offSetX) + 'px' });
-        self.addClass('hatch');
+        self.removeClass('hatch');
         // scoring functions
         self.thisHit = this.battlePower * Math.floor( (Math.random() * 3) + 1 );
       });
@@ -403,6 +403,7 @@ var domGame = {
       'left' : ( (winWidth / 2) + 'px'),
       'top' : ( (winHeight / 2) + 'px')
     });
+    debugger
     var thisStyles = ['fly-off-right', 'fly-off-left'];
     var thisStyle = thisStyles[ (Math.floor(Math.random() * thisStyles.length) ) ]
     $flyOff.addClass(thisStyle);
@@ -420,6 +421,7 @@ var domGame = {
     $.each(fighters, function(i, value) {
       var self = fighters[i];
       self.css(self.restPosition);
+      self.addClass('hatch');
     });
   },
 
