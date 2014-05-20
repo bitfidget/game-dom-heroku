@@ -85,7 +85,7 @@ div#GDMessageContainer {
 #GDMessageContainer table h1,
 #GDMessageContainer table h3,
 #GDMessageContainer table h4{
-  transition: all .5s ease;
+  transition: all .3s ease;
 }
 #GDMessageContainer.update table h1,
 #GDMessageContainer.update table h3,

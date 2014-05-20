@@ -360,6 +360,7 @@ var domGame = {
         loser.battleScore -= loser.battlePower;
       };
       popUp.updateScore();
+
       // check for dead element and adjust loser as needed - get new battleElement
       if (loser.battleHealth <= 0) {
         if ( (loser.battleElement.get(0).id == 'TEOne' ) || (loser.battleElement.get(0).id == 'TETwo' ) ) {
@@ -428,7 +429,6 @@ var domGame = {
 
   },
 
-
   restage : function () {
     //-----------------------------------------------------
     // just moves the fighters back to their corners
@@ -455,7 +455,10 @@ var domGame = {
       winner.empty().append(winner.shadow);
     }, 1000);
     winner.addClass('end-winner');
-    loser.addClass('end-loser')
+    loser.addClass('end-loser');
+    $('#playAgain').on('click', function () {
+      domGame.welcome();
+    });
   },
 
   save : function (winner, loser) {
@@ -620,6 +623,10 @@ var popUp = {
     $healthTwo.html(fighters[2].battleHealth)
     $powerOne.html(fighters[1].battlePower)
     $powerTwo.html(fighters[2].battlePower)
+    $GDMessageContainer.addClass('update');
+    setTimeout(function () {
+        $GDMessageContainer.removeClass('update');
+    }, 300);
   }
 };
 
