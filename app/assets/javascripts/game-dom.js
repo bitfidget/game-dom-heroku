@@ -397,20 +397,16 @@ var domGame = {
     //-----------------------------------------------------
     // make the dead bits fly away 
     //-----------------------------------------------------
-    winBody.append(deadBits);
-    debugger
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
+  
+    // re do this as fn as I'll need it later
+
+    winBody.append('<div class="fly-off">' + deadBits.get(0) + '</div>');
+    $('.fly-off').css({
+      'left' : ( (winWidth / 2) + 'px'),
+      'top' : ( (winHeight / 2) + 'px')
+    }); 
+    $('.fly-off').addClass('fly-off-right') 
+
     console.log(deadBits);
   },
 
