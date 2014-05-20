@@ -84,8 +84,8 @@ var sanityTest = '<div id="sanityTest"/>';
     var winScrollTop = $(window).scrollTop();
     var canvasWidth = this.outerWidth();
     var canvasHeight = this.outerHeight();
-    var canvasX = this.offset().left - winScrollLeft;
-    var canvasY = this.offset().top - winScrollTop;
+    var canvasX = this.offset().left;
+    var canvasY = this.offset().top;
 
     // create duplicate element - named diffently
     if (!$('.divFighter').length) {
@@ -404,7 +404,7 @@ var domGame = {
       'top' : ( (winHeight / 2) + 'px')
     });
     var thisStyles = ['fly-off-right', 'fly-off-left'];
-    var thisStyle = [ (Math.floor(Math.random() * thisStyles.length) ) ]
+    var thisStyle = thisStyles[ (Math.floor(Math.random() * thisStyles.length) ) ]
     $flyOff.addClass(thisStyle);
     setTimeout(function () {
       $flyOff.remove();
