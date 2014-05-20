@@ -236,7 +236,8 @@ var domGame = {
         $(event.target).addClass('domCloned');
         // stage game if this is second click
         if ($('#TETwo').length){
-          setTimeout(function (){
+          $(document).unbind('click');
+          setTimeout(function () {
             domGame.stage()
           }, 500)
         };
