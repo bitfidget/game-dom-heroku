@@ -105,19 +105,19 @@ img.domCloned{
   left: 0;
 }
 .crowdBase{
-  background: rgba(0,0,0,0.2) url(http://dom1nation.herokuapp.com/assets/crowd-01.png) bottom no-repeat;
+  background: rgba(0,0,0,0.2) url(http://divandconquer.herokuapp.com/assets/crowd-01.png) bottom no-repeat;
   background-size: 100%;
 }
 .crowdBaseTwo{
-  background: rgba(0,0,0,0.2) url(http://dom1nation.herokuapp.com/assets/crowd-02.png) bottom no-repeat;
+  background: rgba(0,0,0,0.2) url(http://divandconquer.herokuapp.com/assets/crowd-02.png) bottom no-repeat;
   background-size: 100%;
 }
 .crowdCheer{
-  background: rgba(255,0,0,0.4) url(http://dom1nation.herokuapp.com/assets/crowd-cheer-01.png) bottom no-repeat;
+  background: rgba(255,0,0,0.4) url(http://divandconquer.herokuapp.com/assets/crowd-cheer-01.png) bottom no-repeat;
   background-size: 100%;
 }
 .crowdCheerTwo{
-  background: rgba(255,255,255,0.6) url(http://dom1nation.herokuapp.com/assets/crowd-cheer-02.png) bottom no-repeat;
+  background: rgba(255,255,255,0.6) url(http://divandconquer.herokuapp.com/assets/crowd-cheer-02.png) bottom no-repeat;
   background-size: 100%;
 }
 

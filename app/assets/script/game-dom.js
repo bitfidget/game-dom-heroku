@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------//
 // variables that will be required all over the place
 //------------------------------------------------------------------------//
-var projectHost = 'http://dom1nation.herokuapp.com';
+var projectHost = 'http://divandconquer.herokuapp.com';
 var messagePath = '/ajax-messages/';
 var winWidth, winHeight, winAlertLeft, winBody, currentMsg, reload;
 var $GDMessageContainer = 0;
@@ -396,8 +396,8 @@ var domGame = {
     // make the dead bits fly away 
     //-----------------------------------------------------
   
-    // re do this as fn as I'll need it later for other things
-    winBody.append('<div class="fly-off">' + deadBits[0] + '</div>');
+    deadBits.addStyle('fly-off');
+    winBody.append(deadBits[0]);
     $flyOff = $('.fly-off');
     $flyOff.css({
       'left' : ( (winWidth / 2) + 'px'),

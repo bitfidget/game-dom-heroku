@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------//
 // variables that will be required all over the place
 //------------------------------------------------------------------------//
-var projectHost = 'http://dom1nation.herokuapp.com';
+var projectHost = 'http://divandconquer.herokuapp.com';
 var messagePath = '/ajax-messages/';
 var winWidth, winHeight, winAlertLeft, winBody, currentMsg, reload;
 var $GDMessageContainer = 0;
