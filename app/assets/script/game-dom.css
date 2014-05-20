@@ -1,7 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Anton);
 
 /* generic style to hopefully not overlap with existing style */
-.GoDText,
 .GoDText h1,
 .GoDText h2,
 .GoDText h3,
@@ -11,10 +10,12 @@
 .GoDText p{
   font-family: 'Anton', sans-serif !important;  
   text-align: center;
-  color: rgba(10,10,10,0.9);
+  color: #FA4400;
   margin: 0 !important;
   box-shadow:  0 0 10px rgba(0,0,0,0.5);
-  padding: 3% 2%;
+  padding: 1%;
+  margin: 2% auto;
+  z-index: 100000000;
 }
 /* the selected boxes */
 .divFighter{
@@ -133,7 +134,7 @@ img.domCloned{
   display: none; 
   position: fixed;
   top: 50px; 
-  background: url(http://divandconquer.herokuapp.com/assets/logo-divconquer.png) top no-repeat; 
+  background: transparent url(http://divandconquer.herokuapp.com/assets/logo-divconquer.png) top no-repeat; 
   width: 400px; 
   padding-top: 210px;
   text-align: center;
