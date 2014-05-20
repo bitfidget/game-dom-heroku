@@ -395,23 +395,19 @@ var domGame = {
     //-----------------------------------------------------
     // make the dead bits fly away 
     //-----------------------------------------------------
-  
-    // re do this as fn as I'll need it later for other things
-    winBody.append('<div class="fly-off">' + deadBits[0] + '</div>');
+
+    deadBits.addClass('fly-off');
+    winBody.append(deadBits[0]);
     $flyOff = $('.fly-off');
     $flyOff.css({
-      'left' : ( (winWidth / 2) + 'px'),
+      'left' : ( ( (winWidth + $flyOff.outerWidth() ) / 2) + 'px'),
       'top' : ( (winHeight / 2) + 'px')
     });
-    debugger
-    var thisStyles = ['fly-off-right', 'fly-off-left'];
-    var thisStyle = thisStyles[ (Math.floor(Math.random() * thisStyles.length) ) ]
-    $flyOff.addClass(thisStyle);
+    
     setTimeout(function () {
       $flyOff.remove();
     }, 1100)
 
-    console.log(thisStyle);
   },
 
   restage : function () {

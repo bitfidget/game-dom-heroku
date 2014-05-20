@@ -53,101 +53,43 @@ img.domCloned{
 }
 
 /* deadbits */
+
 .fly-off{
   display: block;
   min-width: 100px;
   min-height: 100px;
   color: red !important;
-}
-.fly-off-right{
-  animation-name: flyRight;
-  -webkit-animation-name: flyRight; 
+  visibility: visible; 
+  position: absolute;
+  z-index: 10000000;
+  animation-name: flyDown;
+  -webkit-animation-name: flyDown; 
   animation-duration: 1.2s; 
   -webkit-animation-duration: 1.2s;
   animation-timing-function: ease-in; 
   -webkit-animation-timing-function: ease-in;   
-  visibility: visible; 
-  position: absolute;
-  z-index: 10000000;
-}
-@keyframes flyRight {
-  0% { 
-    transform: translateX(0%) translateY(0%) rotate(0deg);
-  }
-  20%{ 
-    transform: translateX(300%) translateY(300%) rotate(60deg);
-  }
-  40%{ 
-    transform: translateX(600%) translateY(110%) rotate(120deg);
-  }
-  60%{
-    transform: translateX(900%) translateY(-400%) rotate(180deg);
-  }
-  100%{
-    transform: translateX(1200%) translateY(-1200%) rotate(300deg);
-  }
-}
-@-webkit-keyframes flyRight {
-  0% { 
-    -webkit-transform: translateX(0%) translateY(0%) rotate(0deg);
-  }
-  20%{ 
-    -webkit-transform: translateX(300%) translateY(300%) rotate(60deg);
-  }
-  40%{ 
-    -webkit-transform: translateX(600%) translateY(110%) rotate(120deg);
-  }
-  60%{
-    -webkit-transform: translateX(900%) translateY(-400%) rotate(180deg);
-  }
-  100%{
-    -webkit-transform: translateX(1200%) translateY(-1200%) rotate(300deg);
-  }
-}
 
-.fly-off-left{
-  animation-name: flyLeft;
-  -webkit-animation-name: flyLeft; 
-  animation-duration: 1.2s; 
-  -webkit-animation-duration: 1.2s;
-  animation-timing-function: ease-in; 
-  -webkit-animation-timing-function: ease-in;   
-  visibility: visible; 
-  position: absolute;
-  z-index: 10000000;
 }
-@keyframes flyLeft {
+@keyframes flyDown {
   0% { 
-    transform: translateX(0%) translateY(0%) rotate(0deg);
+    transform: translateY(0%) rotate(0deg);
   }
   20%{ 
-    transform: translateX(-300%) translateY(300%) rotate(60deg);
-  }
-  40%{ 
-    transform: translateX(-600%) translateY(110%) rotate(120deg);
-  }
-  60%{
-    transform: translateX(-900%) translateY(-400%) rotate(180deg);
+    transform: translateY(-10%) rotate(30deg);
   }
   100%{
-    transform: translateX(-1200%) translateY(-1200%) rotate(300deg);
+    transform: translateY(-1200%) rotate(359deg);
   }
 }
-@-webkit-keyframes flyLeft {
+@-webkit-keyframes flyDown {
   0% { 
-    -webkit-transform: translateX(0%) translateY(0%) rotate(0deg);
+    -webkit-transform: translateY(0%) rotate(0deg);
   }
   20%{ 
-    -webkit-transform: translateX(-300%) translateY(300%) rotate(60deg);
-  }
-  40%{ 
-    -webkit-transform: translateX(-600%) translateY(110%) rotate(120deg);
-  }
-  60%{
-    -webkit-transform: translateX(-900%) translateY(-400%) rotate(180deg);
+    -webkit-transform: translateY(-10%) rotate(30deg);
   }
   100%{
-    -webkit-transform: translateX(-1200%) translateY(-1200%) rotate(300deg);
+    -webkit-transform: translateY(-1200%) rotate(359deg);
   }
 }
 
