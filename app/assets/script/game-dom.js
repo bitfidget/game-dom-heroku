@@ -457,7 +457,8 @@ var domGame = {
     }, 1000);
     winner.addClass('end-winner');
     loser.addClass('end-loser');
-    $('#playAgain').on('click', function () {
+    $('#playAgain').click( function (event) {
+      console.log('restart')
       domGame.welcome();
     });
   },
