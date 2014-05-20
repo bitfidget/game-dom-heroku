@@ -32,16 +32,16 @@ fly-off-right
     transform: translateX(0%) translateY(0%) rotate(0deg);
   }
   20%{ 
-    transform: translateX(100%) translateY(19%) rotate(60deg);
+    transform: translateX(300%) translateY(300%) rotate(60deg);
   }
   40%{ 
-    transform: translateX(200%) translateY(30%) rotate(120deg);
+    transform: translateX(600%) translateY(110%) rotate(120deg);
   }
   60%{
-    transform: translateX(300%) translateY(22%) rotate(180deg);
+    transform: translateX(900%) translateY(-400%) rotate(180deg);
   }
   100%{
-    transform: translateX(400%) translateY(-40%) rotate(300deg);
+    transform: translateX(1200%) translateY(-800%) rotate(300deg);
   }
 }
 
@@ -50,16 +50,16 @@ fly-off-right
     -webkit-transform: translateX(0%) translateY(0%) rotate(0deg);
   }
   20%{ 
-    -webkit-transform: translateX(100%) translateY(19%) rotate(60deg);
+    -webkit-transform: translateX(300%) translateY(300%) rotate(60deg);
   }
   40%{ 
-    -webkit-transform: translateX(200%) translateY(30%) rotate(120deg);
+    -webkit-transform: translateX(600%) translateY(100%) rotate(120deg);
   }
   60%{
-    -webkit-transform: translateX(300%) translateY(22%) rotate(180deg);
+    -webkit-transform: translateX(900%) translateY(-400%) rotate(180deg);
   }
   100%{
-    -webkit-transform: translateX(400%) translateY(-40%) rotate(300deg);
+    -webkit-transform: translateX(1200%) translateY(-1200%) rotate(300deg);
   }
 }
 
