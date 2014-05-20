@@ -67,17 +67,21 @@ div#GDMessageContainer {
 }
 #GDMessageContainer table h1{
   font-size: 36px;
+  line-height: 40px;
 }
 #GDMessageContainer table h3{
   font-size: 24px;
+  line-height: 26px;
 }
 #GDMessageContainer table h4{
   font-size: 18px;
+  line-height: 20px;
+
 }
 #GDMessageContainer table h6{
   font-size: 18px;
   color: #333;
-  line-height: 30px;
+  padding: 4px 0;
 }
 #GDMessageContainer table td{
   border: none;
