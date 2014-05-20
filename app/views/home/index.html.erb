@@ -1,13 +1,31 @@
-<h1>Dom Cage Fight</h1>
+<div id="GDMessageContainer" class="GoDText">
+
+<div>
+  <h1>Click two parts of the page to see who will win!</h1>
+  <p><a href="">about &lt;div&gt;&amp;conquer | leaderboard</a></p>
+</div>
+
+<div>
+  <h1 id='fight'>Which dom object on screen will reign supreme?</h1>
+  <table>
+    <tr><td><h1 id='nameOne'></h1></td><td><h4>vs</h4></td><td><h1 id='nameTwo'></h1></td></tr>
+    <tr><td><h1 id='scoreOne'>0</h1></td><td><h6>score</h6></td><td><h1 id='scoreTwo'>0</h1></td></tr>
+    <tr><td><h3 id='healthOne'></h3></td><td><h6>current health</h6></td><td><h3 id='healthTwo'></h3></td></tr>
+    <tr><td><h4 id='powerOne'></h4></td><td><h6>current power</h6></td><td><h4 id='powerTwo'></h4></td></tr>
+    <tr><td><h4 id='hitOne'></h4></td><td><h6>this hit</h6></td><td><h4 id='hitTwo'></h4></td></tr>
+  </table>
+</div>
+
+<div>
+  <h1>PLAY AGAIN</h1>
+  <p><a href="">about &lt;div&gt;&amp;conquer | leaderboard</a></p>
+</div>
+
+</div>
+
 
 <p>Drag this to your bookmarks bar. Click it on ANY site when you think things are looking angry!</p>
 <p><a href="javascript:var%20i,s,ss=['//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js','http://divandconquer.herokuapp.com/assets/game-dom.js'];for(i=0;i!=ss.length;i++){s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);">&lt;div&gt;&amp;conquer</a></p>
-
-<h2>Who will you battle?</h2>
-
-<img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQcBwrXyPgzoTdR9mKj-pLJvOZevmFai31JElWa78JeRINu_jbCBSvLTZCT" alt=""> vs <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSu2YJ9IkdOKYlyFRSB4PXf6JP2o7U_V9dAUwDguxabcVwvPFolJxYRbGxb" alt=""> vs <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSq2K35JBISw8vZAqSbF8jX84U6Fpg4U1f5rZ4P8QLfmhG68MYYC9xnQA9e" alt=""> vs <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQnNeU3IbYaqOktZT2JN9iBqCURdHSepjQSDPWLrV37tLDjWkoci484nfRo" alt="">
-
-http://images6.alphacoders.com/316/316963.jpg
 
 <table>
   <thead>
@@ -20,6 +38,7 @@ http://images6.alphacoders.com/316/316963.jpg
       <th>URL</th>
       <th>Page</th>
     </tr>
+
   </thead>
 
   <tbody>
@@ -37,6 +56,7 @@ http://images6.alphacoders.com/316/316963.jpg
         <th><%= battle.winner.page.url %></th>
         <th><%= battle.winner.page.title %></th>
       </tr>
+
     <% end %>
   </tbody>
 

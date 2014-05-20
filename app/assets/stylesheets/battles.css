@@ -1,0 +1,332 @@
+// Place all the styles related to the Battles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(http://fonts.googleapis.com/css?family=Squada+One);
+
+/* generic style to hopefully not overlap with existing style */
+#GDMessageContainer {
+  font-family: 'Squada One', sans-serif !important;
+  z-index: 10000000; 
+  display: none; 
+  position: fixed;
+  top: 20px; 
+  background: transparent url(assets/logo-div-02.png) top no-repeat; 
+  width: 600px; 
+  padding-top: 100px;
+  text-align: center;
+}
+#GDMessageContainer table {
+  width: 80%;
+  margin: 0 auto;
+}
+.end-winner {
+  display: block;
+  min-width: 275px;
+  min-height: 95px;
+  background: transparent url(assets/div-winner-02.png) top no-repeat; 
+}
+.end-loser {
+  display: block;
+  min-width: 275px;
+  min-height: 95px;
+  background: transparent url(assets/div-loser-02.png) top no-repeat; 
+}
+
+.GoDText h1,
+.GoDText h2,
+.GoDText h3,
+.GoDText h4,
+.GoDText h5,
+.GoDText h6,
+.GoDText p{
+  font-family: 'Squada One', sans-serif !important;  
+  text-align: center;
+  color: #FA4400;
+  margin: 0 !important;
+  box-shadow:  0 0 10px rgba(0,0,0,0.5);
+  padding: 1%;
+  margin: 2% auto;
+  z-index: 100000000;
+}
+.GoDText h1{
+
+}
+/* the selected boxes */
+.divFighter{
+  position: absolute;
+  display: block;
+  z-index: 100000000;
+  transition: all .5s ease;
+  -moz-box-shadow:  0 0 10px rgba(0,0,0,0.5);
+  -webkit-box-shadow:  0 0 10px rgba(0,0,0,0.5);
+  box-shadow:  0 0 10px rgba(0,0,0,0.5);
+  background: #FFF;
+  color: #000;
+}
+/* fade-out elems that have already been selceted */
+.domCloned{
+  background: #333 !important;
+  -moz-box-shadow: inset 0 0 10px rgba(0,0,0,0.5) !important;
+  -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.5) !important;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.5) !important;
+  color: #444 !important;
+}
+.domCloned img,
+img.domCloned{
+  background: #222 !important;
+  opacity: 0.4 !important;
+  -webkit-filter: blur(10px);
+  -webkit-filter: grayscale(100%);
+}
+.domCloned p,
+.domCloned h1,
+.domCloned h2,
+.domCloned h3,
+.domCloned h4,
+.domCloned h5,
+.domCloned h6,
+.domCloned a{
+  color: rgba(243,16,0,1) !important;
+  background: rgba(255,255,255,0.8);
+}
+
+/* deadbits */
+
+.fly-off{
+  display: block;
+  min-width: 100px;
+  min-height: 100px;
+  color: red !important;
+  visibility: visible; 
+  position: absolute;
+  z-index: 10000000;
+  animation-name: flyDown;
+  -webkit-animation-name: flyDown; 
+  animation-duration: 1.2s; 
+  -webkit-animation-duration: 1.2s;
+  animation-timing-function: ease-in; 
+  -webkit-animation-timing-function: ease-in;   
+
+}
+@keyframes flyDown {
+  0% { 
+    transform: translateY(0%) rotate(0deg);
+  }
+  20%{ 
+    transform: translateY(-10%) rotate(30deg);
+  }
+  100%{
+    transform: translateY(-1200%) rotate(359deg);
+  }
+}
+@-webkit-keyframes flyDown {
+  0% { 
+    -webkit-transform: translateY(0%) rotate(0deg);
+  }
+  20%{ 
+    -webkit-transform: translateY(-10%) rotate(30deg);
+  }
+  100%{
+    -webkit-transform: translateY(-1200%) rotate(359deg);
+  }
+}
+
+
+
+/* the 'crowd'  */
+#domCrowd{
+  position: absolute;
+  display: block;
+  z-index: 1000000;
+  background-color: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+}
+.crowdBase{
+  background: rgba(0,0,0,0.2) url(http://divandconquer.herokuapp.com/assets/crowd-01.png) bottom no-repeat;
+  background-size: 100%;
+}
+.crowdBaseTwo{
+  background: rgba(0,0,0,0.2) url(http://divandconquer.herokuapp.com/assets/crowd-02.png) bottom no-repeat;
+  background-size: 100%;
+}
+.crowdCheer{
+  background: rgba(255,0,0,0.4) url(http://divandconquer.herokuapp.com/assets/crowd-cheer-01.png) bottom no-repeat;
+  background-size: 100%;
+}
+.crowdCheerTwo{
+  background: rgba(255,255,255,0.6) url(http://divandconquer.herokuapp.com/assets/crowd-cheer-02.png) bottom no-repeat;
+  background-size: 100%;
+}
+
+/* the popup boxes */
+#sanityTest{
+  display: none;
+}
+
+
+/*
+
+Following styles borrowed from: 
+
+==============================================
+CSS3 ANIMATION CHEAT SHEET
+==============================================
+
+Made by Justin Aguilar
+
+www.justinaguilar.com/animations/
+
+Questions, comments, concerns, love letters:
+justin@justinaguilar.com
+==============================================
+*/
+/*
+==============================================
+tossing
+==============================================
+*/
+
+.tossing{
+  animation-name: tossing;
+  -webkit-animation-name: tossing;  
+
+  animation-duration: 2.5s; 
+  -webkit-animation-duration: 2.5s;
+
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes tossing {
+  0% {
+    transform: rotate(-4deg); 
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(-4deg); 
+  }           
+}
+
+@-webkit-keyframes tossing {
+  0% {
+    -webkit-transform: rotate(-4deg); 
+  }
+  50% {
+    -webkit-transform: rotate(4deg);
+  }
+  100% {
+    -webkit-transform: rotate(-4deg); 
+  }       
+}
+
+
+/*
+==============================================
+hatch
+==============================================
+*/
+
+.hatch{
+  animation-name: hatch;
+  -webkit-animation-name: hatch;  
+  animation-duration: 1s; 
+  -webkit-animation-duration: 1s;
+  animation-timing-function: ease-in-out; 
+  -webkit-animation-timing-function: ease-in-out;
+  transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%; 
+  visibility: visible !important;   
+}
+
+@keyframes hatch {
+  0% {
+    transform: rotate(0deg) scaleY(0.6);
+  }
+  20% {
+    transform: rotate(-2deg) scaleY(1.05);
+  }
+  35% {
+    transform: rotate(2deg) scaleY(1);
+  }
+  50% {
+    transform: rotate(-2deg);
+  } 
+  65% {
+    transform: rotate(1deg);
+  } 
+  80% {
+    transform: rotate(-1deg);
+  }   
+  100% {
+    transform: rotate(0deg);
+  }                 
+}
+
+/*
+==============================================
+bounce
+==============================================
+*/
+
+
+.bounce{
+  animation-name: bounce;
+  -webkit-animation-name: bounce; 
+
+  animation-duration: 1s; 
+  -webkit-animation-duration: 1s;
+
+  animation-timing-function: ease;  
+  -webkit-animation-timing-function: ease;  
+  
+  transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+  -webkit-transform-origin: 50% 100%;   
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0%) scaleY(0.6);
+  }
+  60%{
+    transform: translateY(-100%) scaleY(1.1);
+  }
+  70%{
+    transform: translateY(0%) scaleY(0.95) scaleX(1.05);
+  }
+  80%{
+    transform: translateY(0%) scaleY(1.05) scaleX(1);
+  } 
+  90%{
+    transform: translateY(0%) scaleY(0.95) scaleX(1);
+  }       
+  100%{
+    transform: translateY(0%) scaleY(1) scaleX(1);
+  } 
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(0%) scaleY(0.6);
+  }
+  60%{
+    -webkit-transform: translateY(-100%) scaleY(1.1);
+  }
+  70%{
+    -webkit-transform: translateY(0%) scaleY(0.95) scaleX(1.05);
+  }
+  80%{
+    -webkit-transform: translateY(0%) scaleY(1.05) scaleX(1);
+  } 
+  90%{
+    -webkit-transform: translateY(0%) scaleY(0.95) scaleX(1);
+  }       
+  100%{
+    -webkit-transform: translateY(0%) scaleY(1) scaleX(1);
+  }   
+}

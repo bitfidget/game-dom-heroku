@@ -175,7 +175,7 @@ var domGame = {
     //-----------------------------------------------------
     winWidth = $(window).width();
     winHeight = $(window).height();
-    winAlertLeft = ((winWidth - 400) / 2);
+    winAlertLeft = ((winWidth - 600) / 2);
     winBody = $('body');
     winBody.append(sanityTest);
     $('head').append('<link rel="stylesheet" type="text/css" href="' + projectHost + '/assets/game-dom.css">');
@@ -396,23 +396,38 @@ var domGame = {
     // make the dead bits fly away 
     //-----------------------------------------------------
   
-    deadBits.addStyle('fly-off');
+  //   deadBits.addStyle('fly-off');
+  //   winBody.append(deadBits[0]);
+  //   $flyOff = $('.fly-off');
+  //   $flyOff.css({
+  //     'left' : ( (winWidth / 2) + 'px'),
+  //     'top' : ( (winHeight / 2) + 'px')
+  //   });
+  //   debugger
+  //   var thisStyles = ['fly-off-right', 'fly-off-left'];
+  //   var thisStyle = thisStyles[ (Math.floor(Math.random() * thisStyles.length) ) ]
+  //   $flyOff.addClass(thisStyle);
+  //   setTimeout(function () {
+  //     $flyOff.remove();
+  //   }, 1100)
+
+  //   console.log(thisStyle);
+  // },
+
+  deadBits.addClass('fly-off');
     winBody.append(deadBits[0]);
     $flyOff = $('.fly-off');
     $flyOff.css({
-      'left' : ( (winWidth / 2) + 'px'),
+      'left' : ( ( (winWidth + $flyOff.outerWidth() ) / 2) + 'px'),
       'top' : ( (winHeight / 2) + 'px')
     });
-    debugger
-    var thisStyles = ['fly-off-right', 'fly-off-left'];
-    var thisStyle = thisStyles[ (Math.floor(Math.random() * thisStyles.length) ) ]
-    $flyOff.addClass(thisStyle);
+    
     setTimeout(function () {
       $flyOff.remove();
     }, 1100)
 
-    console.log(thisStyle);
   },
+
 
   restage : function () {
     //-----------------------------------------------------
@@ -439,6 +454,8 @@ var domGame = {
       winner.toggleClass('bounce');
       winner.empty().append(winner.shadow);
     }, 1000);
+    winner.addClass('end-winner');
+    loser.addClass('end-loser')
   },
 
   save : function (winner, loser) {
@@ -546,7 +563,7 @@ var popUp = {
     //-----------------------------------------------------
     $GDMessageContainer.empty();
     $GDMessageContainer.append(fetchedMessage);
-    $GDMessageContainer.slideDown(2000);
+    $GDMessageContainer.fadeIn(1000);
   },
 
   messageCount : function (countFrom) {
