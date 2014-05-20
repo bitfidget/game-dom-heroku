@@ -2,7 +2,8 @@
 
 <div>
   <h1>Click two parts of the page to see who will win!</h1>
-  <p><a href="">about &lt;div&gt;&amp;conquer | leaderboard</a></p>
+  <p><a href="http://divandconquer.herokuapp.com/">&lt;div&gt;&amp;conquer leaderboard</a></p>
+  <p><a href="http://github.com/citizengit">a GA WDI student project by Kriss Heimanis</a></p>
 </div>
 
 <div>
@@ -10,22 +11,27 @@
   <table>
     <tr><td><h1 id='nameOne'></h1></td><td><h4>vs</h4></td><td><h1 id='nameTwo'></h1></td></tr>
     <tr><td><h1 id='scoreOne'>0</h1></td><td><h6>score</h6></td><td><h1 id='scoreTwo'>0</h1></td></tr>
-    <tr><td><h3 id='healthOne'></h3></td><td><h6>current health</h6></td><td><h3 id='healthTwo'></h3></td></tr>
-    <tr><td><h4 id='powerOne'></h4></td><td><h6>current power</h6></td><td><h4 id='powerTwo'></h4></td></tr>
-    <tr><td><h4 id='hitOne'></h4></td><td><h6>this hit</h6></td><td><h4 id='hitTwo'></h4></td></tr>
+    <tr><td><h3 id='healthOne'>0</h3></td><td><h6>current health</h6></td><td><h3 id='healthTwo'>0</h3></td></tr>
+    <tr><td><h4 id='powerOne'>0</h4></td><td><h6>current power</h6></td><td><h4 id='powerTwo'>0</h4></td></tr>
+    <tr><td><h4 id='hitOne'>0</h4></td><td><h6>this hit</h6></td><td><h4 id='hitTwo'>0</h4></td></tr>
   </table>
 </div>
 
 <div>
-  <h1>PLAY AGAIN</h1>
-  <p><a href="">about &lt;div&gt;&amp;conquer | leaderboard</a></p>
+  <h1 id="playAgain">PLAY AGAIN</h1>
+  <p><a href="http://divandconquer.herokuapp.com/">&lt;div&gt;&amp;conquer leaderboard</a></p>
+  <p><a href="http://github.com/citizengit">a GA WDI student project by Kriss Heimanis</a></p>
 </div>
 
 </div>
 
-
-<p>Drag this to your bookmarks bar. Click it on ANY site when you think things are looking angry!</p>
-<p><a href="javascript:var%20i,s,ss=['//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js','http://divandconquer.herokuapp.com/assets/game-dom.js'];for(i=0;i!=ss.length;i++){s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);">&lt;div&gt;&amp;conquer</a></p>
+<img src="http://divandconquer.herokuapp.com/assets/div-logo-02.png" alt="<DIV>&CONQUER">
+<h1>Why &lt;div&gt;&amp;conquer?</h1>
+<p>Div and conquer is a silly game made by a student trying to push what he could do with JQuery. The original idea was to make a webpage into a gameboard, inspired by the game of thrones opening animations, where flat landscapes build into 3D fortresses. I wanted to do the same thing with any webpage you might decide needs some life, and then be able tto battle between these elements. A week is not a long time to do this, but that was all we had, so somewhere along the way game-of-doms changed course and became more of a cage match for page elements. Oh well.</p>
+<h1>Gosh That Sounds Fun - How Can I Play</h1>
+<h3>Drag this link to your bookmarks bar. Click it on ANY site that you think needs some life! <a href="javascript:var%20i,s,ss=['//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js','http://divandconquer.herokuapp.com/assets/game-dom.js'];for(i=0;i!=ss.length;i++){s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);">&lt;div&gt;&amp;CONQUER</a></h3>
+<h1>But This Breaks Websites - Won't I Get in Trouble?</h1>
+<p>Fear not, this doesn't have any permanent effect on the website on which you play it, all the effects are just temporarily created by (huge and confusing strings) of JavaScript code that goes away as soon as you leave the page. So go nuts. If anything you're helping the other websites, as a link to all the sites that get played will appear on this site, and that's called SEO or SEF or SEM or link-farming or social-netowrking or something, and everybody loves that shit.</p>
 
 <table>
   <thead>
@@ -43,18 +49,18 @@
 
   <tbody>
     <% @battles.each do |battle| %>
-      <tr>
-        <th><%= battle.score %></th>
-        <th><%= battle.winner.element %></th>
-        <th>
+      <tr class="<%= cycle('even', 'odd') -%>">
+        <td><%= battle.score %></td>
+        <td><%= battle.winner.element %></td>
+        <td>
           <% battle.winner.conquests.each do |conquest| %>
             <%= conquest.element %>
           <% end %>
-        </th>
-        <th><%= battle.winner.content %></th>
-        <th><%= battle.winner.page.favicon %></th>
-        <th><%= battle.winner.page.url %></th>
-        <th><%= battle.winner.page.title %></th>
+        </td>
+        <td><%= battle.winner.content %></td>
+        <td><%= battle.winner.page.favicon %></td>
+        <td><%= battle.winner.page.url %></td>
+        <td><%= battle.winner.page.title %></td>
       </tr>
 
     <% end %>

@@ -1,6 +1,42 @@
-@import url(http://fonts.googleapis.com/css?family=Anton);
+@import url(http://fonts.googleapis.com/css?family=Squada+One);
 
 /* generic style to hopefully not overlap with existing style */
+div#GDMessageContainer {
+  font-family: 'Squada One', sans-serif !important;
+  z-index: 10000000; 
+  display: none; 
+  position: fixed;
+  top: 20px; 
+  background: url(http://divandconquer.herokuapp.com/assets/div-logo-02.png) top no-repeat; 
+  width: 600px; 
+  padding-top: 110px;
+  text-align: center;
+}
+#GDMessageContainer div{
+  max-width: 80%;
+  margin: 0 auto;
+  box-shadow:  0 0 10px rgba(0,0,0,0.5);
+  background: rgba(255,255,255,0.9);
+  padding: .8em;
+}
+#GDMessageContainer table{
+  width: 400px;
+  border: dashed 1px rgba(0,0,0,0.8);
+  margin: 0 auto;
+}
+.end-winner {
+  display: block;
+  min-width: 275px;
+  min-height: 95px;
+  background: transparent url(http://divandconquer.herokuapp.com/assets/div-winner-02.png) top no-repeat; 
+}
+.end-loser {
+  display: block;
+  min-width: 275px;
+  min-height: 95px;
+  background: transparent url(http://divandconquer.herokuapp.com/assets/div-loser-02.png) top no-repeat; 
+}
+
 .GoDText h1,
 .GoDText h2,
 .GoDText h3,
@@ -8,15 +44,60 @@
 .GoDText h5,
 .GoDText h6,
 .GoDText p{
-  font-family: 'Anton', sans-serif !important;  
+  font-family: 'Squada One', sans-serif !important;  
   text-align: center;
-  color: #FA4400;
+  color: rgba(243,16,0,1);
   margin: 0 !important;
-  box-shadow:  0 0 10px rgba(0,0,0,0.5);
   padding: 1%;
   margin: 2% auto;
   z-index: 100000000;
+  font-size: 16px;
 }
+.GoDText h1{
+  font-size: 24px;
+  line-height: 1em;
+}
+.GoDText a{
+  text-decoration: none !important;
+  color: rgba(51,215,217,1) !important;
+}
+.GoDText:hover{
+  background: #000;
+  color: rgba(51,215,217,1) !important;
+}
+#GDMessageContainer table h1{
+  font-size: 36px;
+}
+#GDMessageContainer table h3{
+  font-size: 24px;
+}
+#GDMessageContainer table h4{
+  font-size: 18px;
+}
+#GDMessageContainer table h6{
+  font-size: 18px;
+  color: #333;
+}
+#GDMessageContainer table td{
+  border: none;
+  width: 33%;
+}
+#GDMessageContainer table h1,
+#GDMessageContainer table h3,
+#GDMessageContainer table h4{
+  transition: all .5s ease;
+}
+#GDMessageContainer.update table h1,
+#GDMessageContainer.update table h3,
+#GDMessageContainer.update table h4{
+  color: rgba(51,215,217,1);
+  font-size: 50%;
+}
+
+
+
+
+
 /* the selected boxes */
 .divFighter{
   position: absolute;
@@ -52,7 +133,7 @@ img.domCloned{
 .domCloned h5,
 .domCloned h6,
 .domCloned a{
-  color: #F71 !important;
+  color: rgba(243,16,0,1) !important;
   background: rgba(255,255,255,0.8);
 }
 
@@ -129,31 +210,6 @@ img.domCloned{
 #sanityTest{
   display: none;
 }
-#GDMessageContainer{
-  z-index: 10000000; 
-  display: none; 
-  position: fixed;
-  top: 50px; 
-  background: transparent url(http://divandconquer.herokuapp.com/assets/logo-divconquer.png) top no-repeat; 
-  width: 400px; 
-  padding-top: 210px;
-  text-align: center;
-}
-#GDMessageContainer button{
-  display: none;
-}
-#GDMessageContainer table{
-  width: 100%;
-  margin: 0 auto;
-}
-
-
-
-
-
-
-
-
 
 
 /*
@@ -238,10 +294,10 @@ hatch
     transform: rotate(0deg) scaleY(0.6);
   }
   20% {
-    transform: rotate(-2deg) scaleY(1.05);
+    transform: rotate(-4deg) scaleY(1.20);
   }
   35% {
-    transform: rotate(2deg) scaleY(1);
+    transform: rotate(4deg) scaleY(1);
   }
   50% {
     transform: rotate(-2deg);
@@ -267,13 +323,10 @@ bounce
 .bounce{
   animation-name: bounce;
   -webkit-animation-name: bounce; 
-
   animation-duration: 1s; 
   -webkit-animation-duration: 1s;
-
   animation-timing-function: ease;  
   -webkit-animation-timing-function: ease;  
-  
   transform-origin: 50% 100%;
   -ms-transform-origin: 50% 100%;
   -webkit-transform-origin: 50% 100%;   
