@@ -29,12 +29,14 @@ div#GDMessageContainer {
   min-width: 275px;
   min-height: 95px;
   background: transparent url(http://divandconquer.herokuapp.com/assets/div-winner-02.png) top no-repeat; 
+  z-index: 90000000;
 }
 .end-loser {
   display: block;
   min-width: 275px;
   min-height: 95px;
-  background: transparent url(http://divandconquer.herokuapp.com/assets/div-dead-02.png) top no-repeat; 
+  background: transparent url(http://divandconquer.herokuapp.com/assets/div-dead-02.png) top no-repeat;
+  z-index: 90000000;
 }
 
 .GoDText h1,

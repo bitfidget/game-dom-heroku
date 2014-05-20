@@ -460,6 +460,7 @@ var domGame = {
       $('#playAgain').fadeIn(1000);
       $('#playAgain').click( function (event) {
         console.log('restart');
+        debugger
         winner.fadeOut(500, function () {
           TEOne.remove();
         });
