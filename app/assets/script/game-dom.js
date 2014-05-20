@@ -446,24 +446,26 @@ var domGame = {
     // game OVER! make the dead dude look dead
     // make the winner look happy!
     //-----------------------------------------------------
-    loser.battleElement.append('<div class="end-loser"></div>');
-    winner.battleElement.append('<div class="end-winner"></div>');
     currentMsg = 'finish';
     popUp.messageFetch(currentMsg);
     $('.hatch').removeClass('hatch');
     $('.tossing').removeClass('tossing');
     setInterval(function () {
       winner.toggleClass('bounce');
-      winner.empty().append(winner.shadow);
     }, 1000);
-    winner.addClass('end-winner');
-    loser.addClass('end-loser');
+    winner.empty().append(winner.shadow);
+    winner.append('<div class="end-winner"></div>');
+    loser.append('<div class="end-loser"></div>');
     setTimeout(function () {
       $('#playAgain').fadeIn(1000);
       $('#playAgain').click( function (event) {
         console.log('restart');
-        $TEOne.fadeOut(500);
-        $TETwo.fadeOut(500);
+        winer.fadeOut(500, function () {
+          TEOne.remove();
+        });
+        loser.fadeOut(500, function () {
+          TETwo.remove();
+        });
         $('#playAgain').click( function (event) {
           domGame.welcome();
         }, 1000);
