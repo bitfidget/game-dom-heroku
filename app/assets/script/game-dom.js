@@ -84,8 +84,8 @@ var sanityTest = '<div id="sanityTest"/>';
     var winScrollTop = $(window).scrollTop();
     var canvasWidth = this.outerWidth();
     var canvasHeight = this.outerHeight();
-    var canvasX = this.offset().left - winScrollLeft;
-    var canvasY = this.offset().top - winScrollTop;
+    var canvasX = this.offset().left;
+    var canvasY = this.offset().top;
 
     // create duplicate element - named diffently
     if (!$('.divFighter').length) {
@@ -161,7 +161,6 @@ var sanityTest = '<div id="sanityTest"/>';
         return 40
       }
   };
-
 } ( jQuery ) );
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -328,7 +327,6 @@ var domGame = {
     var winner, loser;
     // make fighters advance on each other every .5 sec
     var advance = function () {
-      $('.hatch').removeClass('hatch');
       popCrowd.crowdCheer(600)
       // the actual move
       setTimeout(function () {
@@ -342,7 +340,7 @@ var domGame = {
         var self = fighters[i];
         // movement functions
         self.css({ 'left' : ( (winWidth/2) - self.offSetX) + 'px' });
-        self.addClass('hatch');
+        self.removeClass('hatch');
         // scoring functions
         self.thisHit = this.battlePower * Math.floor( (Math.random() * 3) + 1 );
       });
@@ -386,7 +384,7 @@ var domGame = {
     // do it again
     setTimeout(function () {
       advance()
-    }, 1200);
+    }, 1500);
     //-----------------------------------------------------
     // all bits that killed off --> domGame.flyOff
     // once you have a winner --> domGame.end(winner, loser)
@@ -397,20 +395,23 @@ var domGame = {
     //-----------------------------------------------------
     // make the dead bits fly away 
     //-----------------------------------------------------
-    winBody.append(deadBits)
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    console.log(deadBits)
+  
+    // re do this as fn as I'll need it later for other things
+    winBody.append('<div class="fly-off">' + deadBits[0] + '</div>');
+    $flyOff = $('.fly-off');
+    $flyOff.css({
+      'left' : ( (winWidth / 2) + 'px'),
+      'top' : ( (winHeight / 2) + 'px')
+    });
+    debugger
+    var thisStyles = ['fly-off-right', 'fly-off-left'];
+    var thisStyle = thisStyles[ (Math.floor(Math.random() * thisStyles.length) ) ]
+    $flyOff.addClass(thisStyle);
+    setTimeout(function () {
+      $flyOff.remove();
+    }, 1100)
+
+    console.log(thisStyle);
   },
 
   restage : function () {
@@ -420,6 +421,7 @@ var domGame = {
     $.each(fighters, function(i, value) {
       var self = fighters[i];
       self.css(self.restPosition);
+      self.addClass('hatch');
     });
   },
 
@@ -450,11 +452,10 @@ var domGame = {
       title : window.location.hostname
     }
     var thisWinner = {
-      content : winner.shadow.get(0).outerHTML,
+      // content : winner.shadow.get(0).outerHTML,
       element : winner.gameName
     }
     var thisLoser = {
-      //content : loser.shadow.get(0),
       element : loser.gameName
     }
     // make the ajax request
