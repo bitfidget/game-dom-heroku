@@ -3,7 +3,7 @@
 /* generic style to hopefully not overlap with existing style */
 body {
   font-family: 'Squada One', sans-serif !important;
-  padding-top: 110px;
+  padding-top: 30px;
   text-align: center;
 }
 table{
@@ -49,6 +49,7 @@ table td{
 }
 th{
   color: rgba(243,16,0,1);
+  font-size: 18px;
 }
 tr.even{
   background: rgba(51,215,217,1);

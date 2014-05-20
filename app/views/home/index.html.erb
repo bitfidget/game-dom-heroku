@@ -13,7 +13,6 @@
       <th>Winning Element</th>
       <th>Losing Element</th>
       <th>Content</th>
-      <th>favicon</th>
       <th>URL</th>
       <th>Page</th>
     </tr>
@@ -31,8 +30,7 @@
           <% end %>
         </td>
         <td><%= battle.winner.content %></td>
-        <td><%= battle.winner.page.favicon %></td>
-        <td><%= battle.winner.page.url %></td>
+        <td><a href="<%= battle.winner.page.url %>" target="_blank"><%= battle.winner.page.url %></a></td>
         <td><%= battle.winner.page.title %></td>
       </tr>
 

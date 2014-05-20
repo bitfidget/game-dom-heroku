@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
   def welcome
     render :json => '{
                       "class":"welcome",
-                      "html":"<div><h1>Click two parts of the page to see who will win!<\/h1><p><a href="http:\/\/divandconquer.herokuapp.com\/\">&lt;div&gt;&amp;conquer leaderboard<\/a><\/p><p><a href="http:\/\/github.com\/citizengit\">a GA WDI student project by Kriss Heimanis<\/a><\/p><\/div>"
+                      "html":"<div><h1>Click two parts of the page to see who will win!<\/h1><p><a href=\'http:\/\/divandconquer.herokuapp.com\/\'>&lt;div&gt;&amp;conquer leaderboard<\/a><\/p><p><a href=\'http:\/\/github.com\/citizengit\'>a GA WDI student project by Kriss Heimanis<\/a><\/p><\/div>"
                     }'
   end
 
@@ -24,7 +24,7 @@ class MessagesController < ApplicationController
   def finish
     render :json => '{
                       "class":"finish",
-                      "html":"<div><h1 id="playAgain">PLAY AGAIN<\/h1><p><a href=\"http:\/\/divandconquer.herokuapp.com\/\">&lt;div&gt;&amp;conquer leaderboard<\/a><\/p><p><a href=\"http:\/\/github.com\/citizengit\">a GA WDI student project by Kriss Heimanis<\/a><\/p><\/div>"
+                      "html":"<div><h1 id=\'playAgain\'>PLAY AGAIN<\/h1><p><a href=\'http:\/\/divandconquer.herokuapp.com\/\'>&lt;div&gt;&amp;conquer leaderboard<\/a><\/p><p><a href=\'http:\/\/github.com\/citizengit\'>a GA WDI student project by Kriss Heimanis<\/a><\/p><\/div>"
                     }'
   end
 
