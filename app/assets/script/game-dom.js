@@ -460,7 +460,7 @@ var domGame = {
       $('#playAgain').fadeIn(1000);
       $('#playAgain').click( function (event) {
         console.log('restart');
-        winer.fadeOut(500, function () {
+        winner.fadeOut(500, function () {
           TEOne.remove();
         });
         loser.fadeOut(500, function () {
