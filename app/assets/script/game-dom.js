@@ -509,22 +509,10 @@ var domGame = {
       // --> show a button on screen to link to the new score on the leaderboard
       // --> show a PLAY AGAIN button which resets all
       //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    //-----------------------------------------------------
-    // make the dead bits fly away 
-    //-----------------------------------------------------
-    })
+    });
     // AJAX FAIL
     .fail(function(){
       console.log('AJAX FAIL');
-      debugger
     });
   }
 };
