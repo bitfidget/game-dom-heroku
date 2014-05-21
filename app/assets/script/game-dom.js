@@ -146,13 +146,13 @@ var sanityTest = '<div id="sanityTest"/>';
   //--------------------------------------------------------------------------------------------------------------------------------------------------//
   $.fn.setPower = function () {
     if (this.is('br, p, span, td') ) {
-        return 20
+        return 10
       } else if (this.is('ul, ol, li, tr, table, th') ) {
         return 25
       } else if (this.is('tbody, h1, h2, h3, h4, h5, h6') ) {
         return 30
       } else if (this.is('a') ) {
-        return 45
+        return 60
       } else if (this.is('img, video') ) {
         return 50
       } else if (this.is('div, section, article') ) {

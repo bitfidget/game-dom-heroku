@@ -1,14 +1,22 @@
 <img src="http://divandconquer.herokuapp.com/assets/div-logo-02.png" alt="<DIV>&CONQUER">
 <h1>The Web is a Tough Place - Select the Right &lt;div&gt; and Conquer?</p>
-<p>The game is simple, start the game pick any two elements on any page and watch them fight to the death. Make any webpage your plaything! </p>
-
-<h1>Why &lt;div&gt;&amp;conquer?</h1>
-<p>Div and conquer is a silly game made by a student trying to push what he could do with JQuery. The original idea was to make a webpage into a gameboard, inspired by the game of thrones opening animations, where flat landscapes build into 3D fortresses. I wanted to do the same thing with any webpage you might decide needs some life, and then be able tto battle between these elements. A week is not a long time to do this, but that was all we had, so somewhere along the way game-of-doms changed course and became more of a cage match for page elements. Oh well.</p>
+<p>The game is simple, start the game pick any two elements on any page and watch them fight to the death. Make any webpage your plaything!</p>
+<h1>Are There Rules?</h1>
+<p>Loose rules are - whatever you click on the page will battle with it's last child element first, and make it's way up through it's stack until it is dead. Inside this, certain elements are stronger than others, the hierarchy runs like this: </p>
+<ul>
+  <li>&lt;p&gt; &lt;br&gt; &lt;span&gt; &lt;td&gt; = 10</li>
+  <li>&lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;tr&gt; &lt;table&gt; &lt;th&gt; = 25</li>
+  <li>&lt;tbody&gt; &lt;h1&gt; &lt;h2&gt; &lt;h3&gt; &lt;h4&gt; &lt;h5&gt; &lt;h6&gt; = 30</li>
+  <li>&lt;div&gt; &lt;section&gt; &lt;article&gt; = 35</li>
+  <li>&lt;footer&gt; &lt;header&gt; = 40</li>
+  <li>&lt;img&gt; &lt;video&gt; = 50</li>
+  <li>&lt;a&gt; = 60</li>
+</ul> 
+<p>Because we all know that the &lt;a&gt; tag is the king of the web!</p>
 <h1>Gosh That Sounds Fun - How Can I Play</h1>
 <h3>Drag this link to your bookmarks bar --&gt; <a href="javascript:var%20i,s,ss=['//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js','http://divandconquer.herokuapp.com/assets/game-dom.js'];for(i=0;i!=ss.length;i++){s=document.createElement('script');s.src=ss[i];document.body.appendChild(s);}void(0);">&lt;div&gt;&amp;CONQUER</a> &lt;<-- Click it on ANY site that you think needs some life!</h3>
-<h1>But This Breaks Websites - Won't I Get in Trouble?</h1>
+<h1>But This Breaks Websites - I Might Get in Trouble?</h1>
 <p>Fear not, this doesn't have any permanent effect on the website on which you play it, all the effects are just temporarily created by (huge and confusing strings) of JavaScript code that goes away as soon as you leave the page. So go nuts. If anything you're helping the other websites, as a link to all the sites that get played will appear on this site, and that's called SEO or SEF or SEM or link-farming or social-netowrking or something, and everybody loves that shit.</p>
-
 <table>
   <thead>
     <tr>
@@ -41,6 +49,9 @@
   </tbody>
 
 </table>
+<h1>Why &lt;div&gt;&amp;conquer?</h1>
+<p>Div and conquer is a silly game made by a student trying to push what he could do with JQuery. The original idea was to make a webpage into a gameboard, inspired by the game of thrones opening animations, where flat landscapes build into 3D fortresses. I wanted to do the same thing with any webpage you might decide needs some life, and then be able to battle between these elements. A week is not a long time to do this, but that was all we had, so somewhere along the way game-of-doms changed course and became more of a cage match for page elements. Oh well.</p>
+
 
 <!-- AddThis Smart Layers BEGIN -->
 <!-- Go to http://www.addthis.com/get/smart-layers to customize -->
@@ -60,4 +71,6 @@
     'whatsnext' : {}  
   });
 </script>
+
+
 <!-- AddThis Smart Layers END -->
