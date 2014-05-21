@@ -28,6 +28,7 @@ div#GDMessageContainer {
   display: block;
   min-width: 275px;
   min-height: 95px;
+  margin-top: -95px;
   background: transparent url(http://divandconquer.herokuapp.com/assets/div-winner-02.png) top no-repeat; 
   z-index: 90000000;
 }
@@ -35,6 +36,7 @@ div#GDMessageContainer {
   display: block;
   min-width: 275px;
   min-height: 95px;
+  margin-top: -95px;
   background: transparent url(http://divandconquer.herokuapp.com/assets/div-dead-02.png) top no-repeat;
   z-index: 90000000;
 }
@@ -110,7 +112,7 @@ div#GDMessageContainer {
 
 /* the selected boxes */
 .divFighter{
-  position: absolute;
+  position: fixed;
   display: block;
   z-index: 100000000;
   transition: all .5s ease;
@@ -192,7 +194,7 @@ img.domCloned{
 
 /* the 'crowd'  */
 #domCrowd{
-  position: absolute;
+  position: fixed;
   display: block;
   z-index: 1000000;
   background-color: rgba(0,0,0,0.5);
